@@ -35,8 +35,7 @@ dependencies {
 
     implementation(libs.appcompat)
     implementation(libs.material)
-    // https://mvnrepository.com/artifact/com.google.android.material/material
-    runtimeOnly(libs.material)
+    implementation(libs.fragment)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
