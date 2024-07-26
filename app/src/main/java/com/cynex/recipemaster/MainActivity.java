@@ -1,6 +1,5 @@
 package com.cynex.recipemaster;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -8,9 +7,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.cynex.recipemaster.RecipeList.RecipeListFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationBarView;
 
 public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavMenu;
@@ -26,16 +25,13 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .replace(R.id.fragment_container_view, RecipeListFragment.class, null)
+                    .replace(R.id.fragment, RecipeListFragment.class, null)
                     .commit();
         }
 
         bottomNavMenu = findViewById(R.id.bottomNavigationView);
         bottomNavMenu.setBackground(null);
-        listButton = bottomNavMenu.getMenu().getItem(0);
-        pickerButton = bottomNavMenu.getMenu().getItem(2);
         addButton = findViewById(R.id.add_button);
-
 
         bottomNavMenu.setOnItemSelectedListener(item -> {
             Class<? extends Fragment> fragmentClass = null;
@@ -50,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             if (fragmentClass != null) {
                 getSupportFragmentManager().beginTransaction()
                         .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, fragmentClass, null)
+                        .replace(R.id.fragment, fragmentClass, null)
                         .commit();
                 return true;
             }
