@@ -1,6 +1,7 @@
 package com.cynex.recipemaster.RecipeList;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,10 @@ public class RecipeListRecyclerAdapter extends RecyclerView.Adapter<RecipeListRe
     public RecipeViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recipe_list_card, parent, false);
+        view.setOnClickListener(l -> {
+            Intent intent = new Intent(view.getContext(), RecipeActivity.class);
+            view.getContext().startActivity(intent);
+        });
         return new RecipeViewHolder(view);
     }
 

@@ -22,16 +22,16 @@ public class RecipeListFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         recipes = new ArrayList<>();
-        recipes.add(new Recipe("Spaghetti", "Italian", null));
-        recipes.add(new Recipe("Lasagne", "Italian", null));
-        recipes.add(new Recipe("Risotto", "Italian", null));
-        recipes.add(new Recipe("Pizza", "Italian", null));
-        recipes.add(new Recipe("Steak", "American", null));
-        recipes.add(new Recipe("Chicken", "American", null));
-        recipes.add(new Recipe("Sushi", "Japanese", null));
-        recipes.add(new Recipe("Ramen", "Japanese", null));
-        recipes.add(new Recipe("Tacos", "Mexican", null));
-        recipes.add(new Recipe("Burritos", "Mexican", null));
+        recipes.add(new Recipe("Spaghetti", "Italian", null, null, null));
+        recipes.add(new Recipe("Lasagne", "Italian", null, null, null));
+        recipes.add(new Recipe("Risotto", "Italian", null, null, null));
+        recipes.add(new Recipe("Pizza", "Italian", null, null, null));
+        recipes.add(new Recipe("Steak", "American", null, null, null));
+        recipes.add(new Recipe("Chicken", "American", null, null, null));
+        recipes.add(new Recipe("Sushi", "Japanese", null, null, null));
+        recipes.add(new Recipe("Ramen", "Japanese", null, null, null));
+        recipes.add(new Recipe("Tacos", "Mexican", null, null, null));
+        recipes.add(new Recipe("Burritos", "Mexican", null, null, null));
     }
 
     @Nullable
