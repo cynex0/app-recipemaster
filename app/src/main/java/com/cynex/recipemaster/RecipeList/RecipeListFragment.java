@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cynex.recipemaster.R;
+import com.google.android.material.divider.MaterialDividerItemDecoration;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,9 @@ public class RecipeListFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.recipe_list, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.recycler);
-        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.addItemDecoration(new MaterialDividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation()));
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(new RecipeListRecyclerAdapter(view.getContext(), recipes));
         return view;
     }

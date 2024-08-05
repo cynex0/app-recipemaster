@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavMenu = findViewById(R.id.bottomNavigationView);
         bottomNavMenu.setBackground(null);
-        addButton = findViewById(R.id.add_button);
+        //addButton = findViewById(R.id.fab);
 
         bottomNavMenu.setOnItemSelectedListener(item -> {
             Class<? extends Fragment> fragmentClass = null;
